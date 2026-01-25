@@ -1,0 +1,14 @@
+name: 05 - 1 Event filters and activity types
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo "Running when PR is opened or synchronized on main branch."
