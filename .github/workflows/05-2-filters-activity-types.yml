@@ -8,11 +8,16 @@ on:
   push:
 env:
   MY_WORKFLOW_VAR: testing
+  JOB_ENV: global env
 jobs:
   echo:
+    env:
+      JOB_ENV: RELATED TO JOB ENV ONLY
     runs-on: ubuntu-latest
     steps:
       - name: Print message
         run: echo "Running whenever PR is closed"
       - name: Print env
+        run: echo "${{env.MY_WORKFLOW_VAR}}"
+      - name: Print local env
         run: echo "${{env.MY_WORKFLOW_VAR}}"
