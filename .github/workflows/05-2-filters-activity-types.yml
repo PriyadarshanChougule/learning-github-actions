@@ -5,10 +5,14 @@ on:
     types: [closed]
     branches:
       - main
-
+  push:
+env:
+  MY_WORKFLOW_VAR: testing
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: Print message
         run: echo "Running whenever PR is closed"
+      - name: Print env
+        run: echo "${{env.MY_WORKFLOW_VAR}}"
