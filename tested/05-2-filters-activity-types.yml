@@ -20,4 +20,4 @@ jobs:
       - name: Print env
         run: echo "${{env.MY_WORKFLOW_VAR}}"
       - name: Print local env
-        run: echo "${{env.MY_WORKFLOW_VAR}}"
+        run: echo "${{env.JOB_ENV}}"
