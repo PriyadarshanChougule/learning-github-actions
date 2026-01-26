@@ -8,7 +8,7 @@ on:
         description: Run workglow in debug mode
         required: false
         type: boolean
-        default: false
+        default: true
 
 jobs:
   echo:
